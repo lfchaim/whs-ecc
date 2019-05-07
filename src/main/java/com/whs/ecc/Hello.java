@@ -1,3 +1,5 @@
+/* Fonte: https://github.com/freewind-demos/java-curve25519-demo */
+
 package com.whs.ecc;
 
 import org.whispersystems.curve25519.Curve25519;
