@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.4.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.whs.ecc</groupId>
 	<artifactId>whs-ecc</artifactId>
@@ -30,10 +30,15 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-            <groupId>org.whispersystems</groupId>
-            <artifactId>curve25519-java</artifactId>
-            <version>0.5.0</version>
-        </dependency>
+			<groupId>org.whispersystems</groupId>
+			<artifactId>curve25519-java</artifactId>
+			<version>0.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15on</artifactId>
+			<version>1.61</version>
+		</dependency>
 	</dependencies>
 
 	<build>
