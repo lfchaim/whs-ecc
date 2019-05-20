@@ -8,7 +8,7 @@
  */
 package com.whs.ecc.google;
 
-import com.whs.ecc.google.djb.*;
+import com.whs.ecc.curve.Curve25519;
 
 public class Bench {
 

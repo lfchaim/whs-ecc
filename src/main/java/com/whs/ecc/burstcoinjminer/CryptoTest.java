@@ -2,6 +2,8 @@ package com.whs.ecc.burstcoinjminer;
 
 import java.io.UnsupportedEncodingException;
 
+import com.whs.ecc.util.ECCUtil;
+
 public class CryptoTest {
 
 	public static void main(String[] args) {
@@ -14,10 +16,11 @@ public class CryptoTest {
 	private static void pubKey(){
 		String secretPhrase = "mysecretphrase";
 		byte[] pubKey = Crypto.getPublicKey(secretPhrase);
+		String pubKeyStr = ECCUtil.encodeHexString(pubKey);
 		String strPubKey;
 		try {
 			strPubKey = new String(pubKey, "UTF-8");
-			System.out.println("strPubKey: "+strPubKey);
+			System.out.println("strPubKey: "+strPubKey+" pubKeyStr: "+pubKeyStr);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -27,8 +30,9 @@ public class CryptoTest {
 	private static void priKey(){
 		String secretPhrase = "mysecretphrase";
 		byte[] priKey = Crypto.getPrivateKey(secretPhrase);
+		String priKeyStr = ECCUtil.encodeHexString(priKey);
 		String strPriKey = priKey.toString();
-		System.out.println("strPriKey: "+strPriKey);
+		System.out.println("strPriKey: "+strPriKey+" priKeyStr: "+priKeyStr);
 	}
 	
 	private static void sign(){
@@ -36,7 +40,7 @@ public class CryptoTest {
 		String message = "see my message";
 		byte[] resp = Crypto.sign(message.getBytes(), secretPhrase);
 		String strResp = resp.toString();
-		System.out.println("sign - strResp: "+strResp);
+		System.out.println("sign - strResp: "+strResp+" strRespHex: "+ECCUtil.encodeHexString(resp));
 	}
 	
 	private static void aesTest(){
